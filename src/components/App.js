@@ -12,7 +12,7 @@ class App extends Component {
   componentDidMount() {
     this.intervalID = setInterval(
       () => this.setState({ time: new Date() }),
-      1*1000
+      1 * 1000
     );
   }
 
@@ -20,7 +20,7 @@ class App extends Component {
   componentWillUnmount() {
     clearInterval(this.state.intervalID);
   }
-    
+
   getTimeString() {
     const curTime = this.state.time;
     const [hours, minutes, seconds] = [
@@ -30,8 +30,8 @@ class App extends Component {
     ];
 
     const pmOrAm = hours > 12 ? "PM" : "AM";
-    const twevelHourFormat = hours > 12 ? hours - 12 : hours;
-    const hoursString = this.pudTwoNumberDigit(twevelHourFormat);
+    // const twevelHourFormat = hours > 12 ? hours - 12 : hours;
+    const hoursString = this.pudTwoNumberDigit(hours);
     const minutesString = this.pudTwoNumberDigit(minutes);
     const secondsString = this.pudTwoNumberDigit(seconds);
 
