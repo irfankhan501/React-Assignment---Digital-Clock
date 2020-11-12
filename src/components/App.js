@@ -12,7 +12,7 @@ class App extends Component {
   componentDidMount() {
     this.intervalID = setInterval(
       () => this.setState({ time: new Date() }),
-      1000
+      1*1000
     );
   }
 
@@ -20,6 +20,7 @@ class App extends Component {
   componentWillUnmount() {
     clearInterval(this.state.intervalID);
   }
+    
   getTimeString() {
     const curTime = this.state.time;
     const [hours, minutes, seconds] = [
